@@ -1,0 +1,7 @@
+#Fri Nov 11 21:03:40 PST 2016
+base.0=C\:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_aa28d96dfb2560ef685946a74da47cb8b6fc261f
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_14ba72d64f0ae19ceb2172d5ecfff79181f3e126\\classes.dex
+base.1=C\:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_14ba72d64f0ae19ceb2172d5ecfff79181f3e126
+file.0=C\:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_aa28d96dfb2560ef685946a74da47cb8b6fc261f\\classes.dex

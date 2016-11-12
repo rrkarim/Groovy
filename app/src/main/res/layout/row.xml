@@ -1,0 +1,79 @@
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardBackgroundColor="#FAFAFA"
+    card_view:cardCornerRadius="2dp"
+    android:descendantFocusability="blocksDescendants"
+    card_view:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/rowImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="20px"
+
+                />
+
+            <TextView
+                android:id="@+id/rowTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="32dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="#212121"
+                android:text="Food and Restraunt"
+                android:layout_marginBottom="20px"/>
+
+            <View android:id="@+id/separator"
+                android:background="#B0BEC5"
+                android:layout_width = "match_parent"
+                android:layout_height="0.1dp"
+                android:layout_centerVertical ="true"
+                android:layout_alignParentTop="true"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/favB"
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:background="@drawable/ic_favorite_black_24dp"
+                android:layout_marginBottom="2dp"
+                android:onClick="favClick" />
+
+            <TextView
+                android:id="@+id/rowRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:textSize="50px"
+                android:text="+125"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.CardView>

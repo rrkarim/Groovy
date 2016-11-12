@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_news_feed"
+            android:icon="@drawable/ic_news_feed_black_24dp"
+            android:title="Newsfeed" />
+
+
+        <item
+            android:id="@+id/nav_explore"
+            android:icon="@drawable/ic_explore_black_24dp"
+            android:title="Explore" />
+        <item
+            android:id="@+id/nav_bookmarks"
+            android:icon="@drawable/ic_bookmark_black_24dp"
+            android:title="Bookmarks" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Settings" />
+        <item
+            android:id="@+id/log_out"
+            android:icon="@drawable/ic_subdirectory_arrow_left_black_24dp"
+            android:title="Sign out"
+            />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/ic_android_black_24dp"
+                android:title="About us" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_mood_black_24dp"
+                android:title="Feedback" />
+        </menu>
+    </item>
+
+</menu>

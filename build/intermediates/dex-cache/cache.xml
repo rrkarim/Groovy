@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d0ae94305468da7dce57f3796facade61ade39e8">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_14ba72d64f0ae19ceb2172d5ecfff79181f3e126\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="663333c3ceede91bf76bcd4f1e50753b4e59cc52">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_aa28d96dfb2560ef685946a74da47cb8b6fc261f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_41a3a462b840715ed24ff4684eee5e8d60691373\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_4bbfe335f7f5cb304701c68d9640e0517f0020e4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.2.1_9d5f1748ec7f186f0cf9540e4018135c0f69c61d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_6ed2647b78dfbeddb85da6b3ba177f7b7c6b99a4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_e68ff11cbe05db14c38c27871d693a0ababe3d94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_acec4d642399734926c2aef0ca3b185c302a7163\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_d0f4e665e8d6a30e39a5795a9b49cc734cdbb86e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_5198d7970fbc74811362f08173684d7de57d61de\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_bbfd1f2b95f762426e611d061b70665534f1ca99\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_eea8bff30c115568f68b7f6c3440e70b5d2267c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_66c0324777422c30cfc9833da6cfb962dbfc48e8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_49d07a6ad53e0b366717df779aeddcb15b3421b7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b852329a084b9caed1fda15abd926f10c88de3d0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_b41c91d391d985125fc40c47afc8dfdb13d5369c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_c5dbc37d61aac21643fd9881091b60a905f5ecc6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ea4637d2b2187eee6b2cc07a28873de42cf026e5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_e65afc51ede8ad49ad42f576d0530a4966cb8723\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_f1981d5b5002c69e8d1d726d4607c37de50ef6e1\classes.dex" />
+    </item>
+
+</items>
