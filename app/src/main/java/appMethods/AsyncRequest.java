@@ -2,6 +2,7 @@ package appMethods;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +17,8 @@ import java.net.URL;
 
 import Interfaces.AsyncResponse;
 
+import static appMethods.RequestMethods.returnParsedJsonObject;
+
 /**
  * Created by YoAtom on 11/11/2016.
  */
@@ -23,10 +26,19 @@ import Interfaces.AsyncResponse;
 public class AsyncRequest extends AsyncTask<String, Void, String> {
 
     public AsyncResponse delegate = null; // use delegate to callback activity for postexecute
+    private int positionAdapter;
 
     public AsyncRequest(AsyncResponse context) {
         this.delegate = context;
+        this.positionAdapter = -1;
     }
+
+    public AsyncRequest(AsyncResponse context, int position) { // constructor for adapter
+        this.delegate = context;
+        this.positionAdapter = position;
+    }
+
+    public AsyncRequest() {}
 
     @Override
     protected String doInBackground(String... params) {
@@ -82,6 +94,15 @@ public class AsyncRequest extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        delegate.processFinish(result);
+        if(delegate != null) {
+            delegate.processFinish(result, positionAdapter);
+        }
+        else {
+            int jsonResult = returnParsedJsonObject(result);
+            if(jsonResult == 0){
+                Log.w("error-request", "error in requesting server");
+                return;
+            }
+        }
     }
 }

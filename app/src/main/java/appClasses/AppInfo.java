@@ -5,7 +5,7 @@ package appClasses;
  */
 
 public class AppInfo {
-    public static int userId = 0; // default root
+    public static int userId = 1; // default root
     public static String serverUri = "http://10.0.2.2";
     public static String serverImageUri = "http://10.0.2.2/images/";
     public static String serverRequestGetPost = "getPosts.php";

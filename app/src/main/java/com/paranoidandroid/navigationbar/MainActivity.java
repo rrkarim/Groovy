@@ -1,10 +1,13 @@
 package com.paranoidandroid.navigationbar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+
+import com.baoyz.widget.PullRefreshLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,17 +29,35 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
     private String str, uri;
     private ProgressBar progressBar;
     private int queryLen;
+    private AsyncRequest asyncRequestObject;
+    private PullRefreshLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        layout = (PullRefreshLayout) findViewById(R.id.swipeRefreshLayout);
         listView = (ListView) findViewById(R.id.listview);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+
 
         uri = AppInfo.serverUri + "/" + AppInfo.serverRequestGetPost;
-        AsyncRequest asyncRequestObject = new AsyncRequest(this);
+
+        layout.setRefreshing(true);
+
+        layout.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                asyncRequestObject = new AsyncRequest(MainActivity.this);
+                asyncRequestObject.execute(uri, "");
+                layout.setRefreshing(false);
+            }
+        });
+
+        asyncRequestObject = new AsyncRequest(this);
         asyncRequestObject.execute(uri, "");
+
     }
 
     void parseData() {
@@ -47,13 +68,12 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
         catch (JSONException e) {
             e.printStackTrace();
         }
-
         myAdapter = new MyAdapter(this, listS);
         listView.setAdapter(myAdapter);
     }
 
     @Override
-    public void processFinish(String output) {
+    public void processFinish(String output, int position) {
         if(output == null || output.equals("")) {
             queryLen = 0;
             return;
@@ -69,6 +89,6 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
         }
         parseData();
         listView.setVisibility(View.VISIBLE);
-        progressBar.setVisibility(View.INVISIBLE);
+        layout.setRefreshing(false);
     }
 }
