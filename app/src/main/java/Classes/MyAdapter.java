@@ -70,7 +70,6 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
         final int postId = postTmp.getId(); // actual post id
 
         if(userLikes.get(postId) != null) {
-            System.out.println("hee");
             button.setEnabled(false);
         }
 
@@ -141,9 +140,7 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
             final Post postTmp = getItem(position);
             postTmp.increaseCount();
 
-
-
-            System.out.println(postTmp.getId());
+            System.out.println("id is " + postTmp.getId());
 
             txtVHash.get(postTmp.getId()).setText("+" + postTmp.getLikesCount());
             imVHash.get(postTmp.getId()).setEnabled(false);

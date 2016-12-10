@@ -388,6 +388,7 @@
             <enum name="screen" value="15"/>
         </attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
+    <declare-styleable name="refresh_PullRefreshLayout"><attr format="enum" name="refreshType"><enum name="material" value="0"/><enum name="circles" value="1"/><enum name="water_drop" value="2"/><enum name="ring" value="3"/><enum name="smartisan" value="4"/></attr><attr format="reference" name="refreshColors"/><attr format="reference" name="refreshColor"/></declare-styleable>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>

@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="d0ae94305468da7dce57f3796facade61ade39e8">
+        sha1="e335ef9ec7566f9eb1bd02101bef2d2d266a5275">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_14ba72d64f0ae19ceb2172d5ecfff79181f3e126\classes.dex" />
     </item>
     <item
@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="663333c3ceede91bf76bcd4f1e50753b4e59cc52">
+        sha1="e5d18bcf192b40e2afa6315939e843267e659186">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_aa28d96dfb2560ef685946a74da47cb8b6fc261f\classes.dex" />
     </item>
     <item
@@ -27,6 +27,15 @@
         revision="24.0.3"
         sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_41a3a462b840715ed24ff4684eee5e8d60691373\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.baoyz.pullrefreshlayout\library\1.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d05c16d86108d3d34377946a79d79f8485a46bfa">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.baoyz.pullrefreshlayout-library-1.2.0_3aca83f240dd7c8574e5e8bdd554285e6545f50b\classes.dex" />
     </item>
     <item
         is-multidex="true"
