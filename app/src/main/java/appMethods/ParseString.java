@@ -13,7 +13,7 @@ import appClasses.AppInfo;
  */
 
 public class ParseString {
-    public static ArrayList<Post> StringToArray(String str, int requestLen) throws JSONException {
+    public static ArrayList<Post> StringToArrayPost(String str, int requestLen) throws JSONException {
         ArrayList<Post> listS = new ArrayList<>();
         JSONObject jsonObject = new JSONObject(str);
         for(int i = 0; i < requestLen; ++i) {
@@ -29,6 +29,17 @@ public class ParseString {
                     object.getString("header_image"),
                     object.getString("text"))
                     );
+        }
+        return listS;
+    }
+
+    public static ArrayList<Integer> StringToArrayLike(String str, int requestLen) throws JSONException {
+        ArrayList<Integer> listS = new ArrayList<>();
+        JSONObject jsonObject = new JSONObject(str);
+        for(int i = 0; i < requestLen; ++i) {
+            JSONObject object = jsonObject.getJSONObject(String.valueOf(i));
+            if(object == null) break;
+            listS.add(object.getInt("pid"));
         }
         return listS;
     }

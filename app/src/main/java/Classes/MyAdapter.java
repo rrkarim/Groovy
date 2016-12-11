@@ -21,6 +21,8 @@ import android.widget.Toast;
 
 import com.paranoidandroid.navigationbar.R;
 
+import org.json.JSONException;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,8 +30,11 @@ import java.util.HashMap;
 import Classes.Post;
 import Interfaces.AsyncResponse;
 import appClasses.AppInfo;
+import appClasses.AsyncCode;
+import appClasses.Errors;
 import appMethods.AsyncRequest;
 
+import static appMethods.ParseString.StringToArrayLike;
 import static appMethods.RequestMethods.downloadBitmap;
 import static appMethods.RequestMethods.returnParsedJsonObject;
 
@@ -42,16 +47,18 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
     private final HashMap <Integer, ImageView> imVHash = new HashMap <>();
     private final HashMap <Integer, TextView> txtVHash = new HashMap<>();
     private final HashMap <Integer, Integer> userLikes = new HashMap<>();
-    private final int deleteCount = 4;
+    //private final int deleteCount = 4;
 
     public MyAdapter(Context context, ArrayList<Post> urls) {
         super(context, 0, urls);
-        //getUserLikes(1); // our user is 1 currently (superuser)
+        getUserLikes(AppInfo.USER_ID); // our user is 1 currently (superuser)
     }
 
-    void getUserLikes(int uid) {
-        userLikes.put(1, 1);
-        userLikes.put(3, 1);
+    void getUserLikes(String uid) {
+        String uri = AppInfo.serverUri + "/" + AppInfo.serverGetLikes;
+        String parameters = "uid=" + uid;
+        AsyncRequest asyncRequestObject = new AsyncRequest(this, -1, AsyncCode._GET_LIKES);
+        asyncRequestObject.execute(uri, parameters);
     }
 
     @Override
@@ -72,38 +79,26 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
         if(userLikes.get(postId) != null) {
             button.setEnabled(false);
         }
-
-        if(imVHash.get(postId) == null) {
-            imVHash.put(postId, button);
+        else {
+            button.setEnabled(true);
         }
-        if(txtVHash.get(postId) == null) {
-            txtVHash.put(postId, rowRate);
-        }
-        //System.out.println(position + " " + button);
 
-        /*
-            errors like:
-                {
-                    when you press like button and scroll down, you will remove object that you have to use in
-                    process finish.
-                }
-            if(position >= deleteCount) {
-                imVHash.remove(position);
-                txtVHash.remove(position);
-            }
-        */
+        if(imVHash.get(position) == null) {
+            imVHash.put(position, button);
+        }
+        if(txtVHash.get(position) == null) {
+            txtVHash.put(position, rowRate);
+        }
 
         rowTitle.setText(postTmp.getTitle());
         rowRate.setText("+" + postTmp.getLikesCount()); // fix this field
 
-        /* SharedPreference to retrieve user info */
-        //SharedPreferences sharedPref = cont.getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        //final String userId = sharedPref.getString("email", null);
 
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                button.setEnabled(false);
                 likeClick(postTmp.getId(), AppInfo.userId, position);
             }
         });
@@ -121,30 +116,55 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
         String uri = AppInfo.serverUri + "/" + AppInfo.serverRequestLike;
         String parameters = "id=" + id + "  &uid=" + uid;
 
-        AsyncRequest asyncRequestObject = new AsyncRequest(this, position);
+        AsyncRequest asyncRequestObject = new AsyncRequest(this, position, AsyncCode._SET_LIKE);
         asyncRequestObject.execute(uri, parameters);
     }
 
+    void parseData(String str, int queryLen) {
+        try {
+            ArrayList<Integer> listS = StringToArrayLike(str, queryLen);
+            System.out.println(listS.size());
+            for(Integer i : listS) {
+                if(userLikes.get(i) == null) userLikes.put(i, 1);
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
-    public void processFinish(String output, int position) {
-
-        if(output == null || output.equals("")) {
-            return;
-        }
-        int jsonResult = returnParsedJsonObject(output);
-        if(jsonResult == 0){
-            System.out.println("error increasing like_count of the post");
-        }
-        else {
-            System.out.println("successful increased likes count");
+    public void processFinish(String output, int position, int requestCode) {
+        if(requestCode == AsyncCode._SET_LIKE) { // Like Post
+            if (output == null || output.equals("")) {
+                return;
+            }
+            int jsonResult = returnParsedJsonObject(output);
             final Post postTmp = getItem(position);
-            postTmp.increaseCount();
 
-            System.out.println("id is " + postTmp.getId());
+            if (jsonResult == 0) {
+                System.out.println("error increasing like_count of the post");
+                Toast.makeText(this.getContext(), Errors._LIKE_ERROR, Toast.LENGTH_LONG).show();
+                imVHash.get(position).setEnabled(true);
+            } else {
+                System.out.println("successful increased likes count");
 
-            txtVHash.get(postTmp.getId()).setText("+" + postTmp.getLikesCount());
-            imVHash.get(postTmp.getId()).setEnabled(false);
+                postTmp.increaseCount();
+                txtVHash.get(position).setText("+" + postTmp.getLikesCount());
+                userLikes.put(position, 1);
 
+            }
+        }
+        else if(requestCode == AsyncCode._GET_LIKES) {
+            if (output == null || output.equals("")) {
+                System.out.println(Errors._LIKES_GET_ERROR);
+            }
+            else {
+                int jsonResult = returnParsedJsonObject(output);
+                if(jsonResult > 0) {
+                    parseData(output, jsonResult);
+                }
+            }
         }
     }
 

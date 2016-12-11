@@ -12,4 +12,6 @@ public class AppInfo {
     public static String serverRequestGetCountries = "getCountries.php";
     public static String serverRequestLike = "like.php";
     public static String sertverAddConn = "addNewConnection.php";
+    public static String serverGetLikes = "getUserLikes.php";
+    public static String USER_ID = "1";
 }

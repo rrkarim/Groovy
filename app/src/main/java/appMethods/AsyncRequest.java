@@ -27,15 +27,12 @@ public class AsyncRequest extends AsyncTask<String, Void, String> {
 
     public AsyncResponse delegate = null; // use delegate to callback activity for postexecute
     private int positionAdapter;
+    private int requestCode;
 
-    public AsyncRequest(AsyncResponse context) {
-        this.delegate = context;
-        this.positionAdapter = -1;
-    }
-
-    public AsyncRequest(AsyncResponse context, int position) { // constructor for adapter
+    public AsyncRequest(AsyncResponse context, int position, int requestCode) { // constructor for adapter
         this.delegate = context;
         this.positionAdapter = position;
+        this.requestCode = requestCode;
     }
 
     public AsyncRequest() {}
@@ -95,7 +92,7 @@ public class AsyncRequest extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         if(delegate != null) {
-            delegate.processFinish(result, positionAdapter);
+            delegate.processFinish(result, positionAdapter, requestCode);
         }
         else {
             int jsonResult = returnParsedJsonObject(result);

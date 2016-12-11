@@ -5,5 +5,5 @@ package Interfaces;
  */
 
 public interface AsyncResponse {
-    void processFinish(String output, int position);
+    void processFinish(String output, int position, int requestCode);
 }
