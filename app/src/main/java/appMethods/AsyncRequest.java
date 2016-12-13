@@ -40,6 +40,7 @@ public class AsyncRequest extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         // data we need to send HTTP request
+
         URL url = null;
         HttpURLConnection connection = null;
         String requestPar = params[1];

@@ -29,6 +29,7 @@ import java.util.HashMap;
 
 import Classes.Post;
 import Interfaces.AsyncResponse;
+import Interfaces.PlayerCallback;
 import appClasses.AppInfo;
 import appClasses.AsyncCode;
 import appClasses.Errors;
@@ -43,6 +44,8 @@ import static appMethods.RequestMethods.returnParsedJsonObject;
  */
 
 public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
+
+    private PlayerCallback callback;
 
     private final HashMap <Integer, ImageView> imVHash = new HashMap <>();
     private final HashMap <Integer, TextView> txtVHash = new HashMap<>();
@@ -63,7 +66,7 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-
+        System.out.println("dsdxxxxd");
         final Post postTmp = getItem(position);
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.row, parent, false);
@@ -98,6 +101,7 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
 
             @Override
             public void onClick(View v) {
+                callback.playPressed(postTmp);
                 button.setEnabled(false);
                 likeClick(postTmp.getId(), AppInfo.userId, position);
             }
@@ -123,7 +127,6 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
     void parseData(String str, int queryLen) {
         try {
             ArrayList<Integer> listS = StringToArrayLike(str, queryLen);
-            System.out.println(listS.size());
             for(Integer i : listS) {
                 if(userLikes.get(i) == null) userLikes.put(i, 1);
             }
@@ -192,5 +195,9 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
                 postTmp.SetBitmap(result);
             }
         }
+    }
+
+    public void setCallback(PlayerCallback callback) {
+        this.callback = callback;
     }
 }
