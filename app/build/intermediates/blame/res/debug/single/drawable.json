@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_home_black_24dp.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_home_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_slideshow.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_menu_slideshow.xml"
     },
@@ -60,6 +64,14 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_dehaze_black_24dp.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_dehaze_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\below_shadow.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.sothree.slidinguppanel\\library\\3.0.0\\res\\drawable\\below_shadow.xml"
+    },
+    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_gallery.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_menu_gallery.xml"
     },
@@ -80,6 +92,10 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shadow.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\shadow.xml"
+    },
+    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_send.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_menu_send.xml"
     },
@@ -94,6 +110,10 @@
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_search_black_24dp.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_search_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_share.xml",
@@ -140,6 +160,10 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\above_shadow.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.sothree.slidinguppanel\\library\\3.0.0\\res\\drawable\\above_shadow.xml"
+    },
+    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
@@ -148,12 +172,12 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
-        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_ab_back_material.xml"
-    },
-    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
