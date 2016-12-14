@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.sothree.slidinguppanel\library\3.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c1200ab3b93b8f42c0878b00eb79a84c1f112cf7">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.sothree.slidinguppanel-library-3.0.0_ac3f81c7eed992b0e187c171a08f0dd2f0819e77\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="bda80beb5cd8a092ed82e10f87030577eabaf327">
+        sha1="6ba8abfa8465fba6875103a485e1b074d9efd092">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_14ba72d64f0ae19ceb2172d5ecfff79181f3e126\classes.dex" />
     </item>
     <item
@@ -16,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e75db95e6cdb879a294ae4fe8bbe0b60e80fb3d3">
+        sha1="d0aabd2d36c4d7f2bc208c58a49160f47c1ea323">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_aa28d96dfb2560ef685946a74da47cb8b6fc261f\classes.dex" />
     </item>
     <item
@@ -30,12 +39,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\exploded-aar\com.baoyz.pullrefreshlayout\library\1.2.0\jars\classes.jar"
+        jar="C:\Users\YoAtom\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="d05c16d86108d3d34377946a79d79f8485a46bfa">
-        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.baoyz.pullrefreshlayout-library-1.2.0_3aca83f240dd7c8574e5e8bdd554285e6545f50b\classes.dex" />
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_440ab51a2f3637cc186bde2195a910772dd65142\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -144,6 +153,15 @@
         revision="24.0.3"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b852329a084b9caed1fda15abd926f10c88de3d0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\YoAtom\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.2\daf5472b0df6dabaceb6ad755b3812535863965a\butterknife-5.1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="daf5472b0df6dabaceb6ad755b3812535863965a">
+        <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-5.1.2_addb574b8fa6a568a5ec067e286c848dc559e12b\classes.dex" />
     </item>
     <item
         is-multidex="true"

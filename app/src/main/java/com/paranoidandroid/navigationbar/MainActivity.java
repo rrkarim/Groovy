@@ -1,13 +1,19 @@
 package com.paranoidandroid.navigationbar;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -16,6 +22,8 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 import Classes.MyAdapter;
@@ -45,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
     private SwipeRefreshLayout layout;
     private SlidingUpPanelLayout slidingLayout;
 
+    MediaPlayer mPlayer; // sample need to be fixed
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +62,12 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
 
         ButterKnife.inject(this);
         setupToolbar();
+
+
+        /**/
+        ImageView sm = (ImageView) findViewById(R.id.coverImage);
+        Drawable placeholder = sm.getContext().getResources().getDrawable(R.drawable.placeholder);
+        sm.setImageDrawable(placeholder);
 
         layout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
         listView = (ListView) findViewById(R.id.listview);
@@ -64,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
             public void onRefresh() {
                 asyncRequestObject = new AsyncRequest(MainActivity.this, -1, AsyncCode._GET_NEWS);
                 asyncRequestObject.execute(uri, "");
-                layout.setRefreshing(false);
             }
         });
 
@@ -84,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
 
         myAdapter = new MyAdapter(this, listS);
         myAdapter.setCallback(this);
-
+        layout.setRefreshing(false);
         listView.setAdapter(myAdapter);
     }
 
@@ -107,8 +122,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
 
     @Override
     public void playPressed(Post post) {
-        TextView vi = (TextView) findViewById(R.id.name);
-        vi.setText(post.getTitle());
+
     }
 
     private void setupToolbar() {
@@ -130,5 +144,47 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
         tabLayout.getTabAt(3).setIcon(R.drawable.ic_dehaze_black_24dp);
 
 
+    }
+
+    /*
+        fixes here
+        Very simple approach
+     */
+    public void playPause(View view) {
+        ImageButton button = (ImageButton) findViewById(R.id.playPauseButton);
+        if(mPlayer != null && mPlayer.isPlaying()) {
+            button.setBackgroundDrawable( getResources().getDrawable(R.drawable.ic_play_circle_outline_black_24dp) );
+            mPlayer.pause();
+        }
+        else {
+
+            button.setBackgroundDrawable( getResources().getDrawable(R.drawable.ic_pause_circle_outline_black_24dp) );
+
+            if(mPlayer == null) {
+                mPlayer = new MediaPlayer();
+                mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+                try {
+                    mPlayer.setDataSource("http://10.0.2.2/songs/mahir.mp3");
+                } catch (IllegalArgumentException e) {
+                    Log.w("Error", "You might not set the URI correctly!");
+                } catch (SecurityException e) {
+                    Log.w("Error", "You might not set the URI correctly!");
+                } catch (IllegalStateException e) {
+                    Log.w("Error", "You might not set the URI correctly!");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    mPlayer.prepare();
+                } catch (IllegalStateException e) {
+                    Log.w("Error", "You might not set the URI correctly!");
+                } catch (IOException e) {
+                    Log.w("Error", "You might not set the URI correctly!");
+                }
+            }
+            mPlayer.start();
+        }
     }
 }

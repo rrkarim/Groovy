@@ -66,7 +66,7 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        System.out.println("dsdxxxxd");
+
         final Post postTmp = getItem(position);
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.row, parent, false);
@@ -112,7 +112,6 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
             imView.setImageBitmap(postTmp.getImageBitmap());
         }
         return convertView;
-
     }
 
     private void likeClick(int id, int uid, int position) {
