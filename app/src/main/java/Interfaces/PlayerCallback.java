@@ -5,5 +5,5 @@ package Interfaces;
  */
 
 public interface PlayerCallback {
-    void playPressed(Classes.Post post);
+    void playPressed(Classes.Post post, int position);
 }

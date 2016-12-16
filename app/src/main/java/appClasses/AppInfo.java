@@ -5,7 +5,7 @@ package appClasses;
  */
 
 public class AppInfo {
-    public static int userId = 1; // default root
+    public static int userId = 1; //default root
     public static String serverUri = "http://10.0.2.2";
     public static String serverImageUri = "http://10.0.2.2/images/";
     public static String serverRequestGetPost = "getPosts.php";
@@ -13,5 +13,14 @@ public class AppInfo {
     public static String serverRequestLike = "like.php";
     public static String sertverAddConn = "addNewConnection.php";
     public static String serverGetLikes = "getUserLikes.php";
+
+
+    //last fm api
+    public static String lastFmApiKey = "9e55a8eaead6ab6215f19da79abadc39";
+    public static String lastFmGetArtistInfo = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=" + lastFmApiKey + "&format=json";
+    //
     public static String USER_ID = "1";
+
+    // Notifications
+    public static int NOTIFY_ID = 1; // music info change
 }

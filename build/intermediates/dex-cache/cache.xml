@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="9e53d3f9657666916b10f471f82573bdbe22e0c8">
+        sha1="bb8ac35a65674233d77839cbdb7141f067192413">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_14ba72d64f0ae19ceb2172d5ecfff79181f3e126\classes.dex" />
     </item>
     <item
@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b1131ef5bd20911a754260073b66a007f37efb07">
+        sha1="9f23fe4aec046503cb4d2bffd98b03b50a3da48f">
         <dex dex="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_aa28d96dfb2560ef685946a74da47cb8b6fc261f\classes.dex" />
     </item>
     <item

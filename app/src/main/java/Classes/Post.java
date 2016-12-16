@@ -2,24 +2,36 @@ package Classes;
 
 import android.graphics.Bitmap;
 
+import java.util.Date;
+
 /**
  * Created by YoAtom on 11/5/2016.
  */
 
 public class Post {
-    private int id, likesCount, typeId, countryId;
-    private String title, headerImage, text;
+    private int id, likesCount, typeId, repCounts, authorId;
+    private String title, headerImage, text, singer, album, track;
     private Bitmap imageBitmap;
+    private Author author;
+    private Date date;
+    private Actions actions;
 
-    public Post(int id, int likesCount, int typeId, int countryId, String title, String headerImage, String text) {
+    public Post(int id, String title, String singer, String headerImage, int likesCount, int repCounts,
+                int authorId, String album, int typeId, String track, String text, Author author, Date date, Actions actions) {
         this.id = id;
-        this.likesCount = likesCount;
-        this.typeId = typeId;
-        this.countryId = countryId;
         this.title = title;
+        this.singer = singer;
         this.headerImage = headerImage;
+        this.likesCount = likesCount;
+        this.repCounts = repCounts;
+        this.authorId = authorId;
+        this.album = album;
+        this.typeId = typeId;
         this.text = text;
-
+        this.author = author;
+        this.date = date;
+        this.actions = actions;
+        this.track = track;
     }
 
     public int getId() {
@@ -48,6 +60,38 @@ public class Post {
 
     public void increaseCount() {
         this.likesCount++;
+    }
+
+    public String getAuthorName() {
+        return this.author.getName();
+    }
+
+    public String getAuthorSName() {
+        return this.author.getSurname();
+    }
+
+    public String getSinger() {
+        return this.singer;
+    }
+
+    public String getAuthorImage() {
+        return this.author.getImage_small();
+    }
+
+    public Date getDate() {
+        return this.date;
+    }
+
+    public String getTrack() {
+        return this.track;
+    }
+
+    public boolean isLiked() {
+        return (actions.isLiked == 1 ? true : false);
+    }
+
+    public boolean isPosted() {
+        return (actions.isPosted == 1 ? true : false);
     }
 
     public boolean checkBitMap() {

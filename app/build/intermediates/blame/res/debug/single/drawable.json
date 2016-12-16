@@ -88,6 +88,10 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_play_circle_outline_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\profile.png",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\profile.png"
+    },
+    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.1\\res\\drawable\\design_fab_background.xml"
     },
@@ -172,6 +176,10 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_insert_link_black_24dp.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_insert_link_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\above_shadow.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.sothree.slidinguppanel\\library\\3.0.0\\res\\drawable\\above_shadow.xml"
     },
@@ -184,12 +192,16 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
-        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_tab_indicator_material.xml"
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_insert_link_white_24dp.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_insert_link_white_24dp.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
