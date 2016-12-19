@@ -23,7 +23,9 @@ import appClasses.AppInfo;
 public class ParseString {
     public static ArrayList<Post> StringToArrayPost(String str, int requestLen) throws JSONException, ParseException {
         ArrayList<Post> listS = new ArrayList<>();
+
         JSONObject jsonObject = new JSONObject(str);
+
         for(int i = 0; i < requestLen; ++i) {
 
             JSONObject object = jsonObject.getJSONObject(String.valueOf(i));

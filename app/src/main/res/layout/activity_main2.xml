@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorWhite"
+    tools:context="com.paranoidandroid.navigationbar.Main2Activity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            app:tabMaxWidth="0dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="68dp"
+        sothree:umanoParalaxOffset="100dp"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="60dp"
+        sothree:umanoShadowHeight="4dp">
+
+        <RelativeLayout
+            android:id="@+id/daad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-58dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </RelativeLayout>
+
+        //
+
+
+        <LinearLayout
+            android:id="@+id/dragView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="false"
+            android:background="@drawable/player_foot_background"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/dragRegion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/coverImage"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_margin="9dp"/>
+                <TextView
+                    android:id="@+id/trackName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/coverImage"
+                    android:textColor="#ededed"
+                    android:layout_marginTop="10dp"
+                    android:textSize="@dimen/fab_margin"
+                    />
+                <TextView
+                    android:id="@+id/trackArtist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ededed"
+                    android:layout_toRightOf="@id/coverImage"
+                    android:layout_marginTop="30dp"
+                    />
+                <ImageButton
+                    android:id="@+id/playPauseButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_play_circle_outline_black_24dp"
+                    android:onClick="playPause"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp">
+                <TextView
+                    android:id="@+id/trackCurrentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ededed"
+                    android:text="0:00"/>
+                <SeekBar
+                    android:id="@+id/trackSeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/trackCurrentTime"
+                    android:layout_toLeftOf="@+id/trackFullTime" />
+                <TextView
+                    android:id="@+id/trackFullTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="#ededed"
+                    android:text="4:43"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/trackInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp">
+
+                <ImageButton
+                    android:id="@+id/favB"
+                    android:layout_width="58px"
+                    android:layout_height="58px"
+                    android:background="@drawable/ic_favorite_white_24dp"
+                    android:layout_marginBottom="2dp" />
+                <TextView
+                    android:id="@+id/favCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/favB"
+                    android:textColor="#ededed"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginLeft="6dp"
+                    android:text="+3169"/>
+
+                <ImageButton
+                    android:id="@+id/repostB"
+                    android:layout_width="60px"
+                    android:layout_height="60px"
+                    android:layout_toRightOf="@id/favCount"
+                    android:background="@drawable/ic_insert_link_white_24dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="12dp"/>
+
+                <TextView
+                    android:id="@+id/repostCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/repostB"
+                    android:textColor="#ededed"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginLeft="6dp"
+                    android:text="0"/>
+
+                <TextView
+                    android:id="@+id/authorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/repostCount"
+                    android:textColor="#ededed"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginLeft="12dp"/>
+
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/samples"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ListView
+                    android:id="@+id/song_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </ListView>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</android.support.design.widget.CoordinatorLayout>

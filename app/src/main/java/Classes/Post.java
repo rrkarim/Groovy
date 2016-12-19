@@ -62,6 +62,14 @@ public class Post {
         this.likesCount++;
     }
 
+    public int getRepCounts() {
+        return repCounts;
+    }
+
+    public void increaseCount(int likes) {
+        this.likesCount += likes;
+    }
+
     public String getAuthorName() {
         return this.author.getName();
     }
