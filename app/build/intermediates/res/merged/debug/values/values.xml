@@ -49,10 +49,12 @@
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#a62a54</color>
+    <color name="colorBackgroundGrey">#f5f5f5</color>
     <color name="colorBlackTrans">#E6000000</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#760229</color>
+    <color name="colorPrimaryDark">#760229</color>
+    <color name="colorWhite">#FFF</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>
     <color name="design_fab_shadow_start_color">#44000000</color>
@@ -95,6 +97,7 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
+    <color name="sample">#f5f5f5</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
@@ -298,6 +301,8 @@
         </attr></declare-styleable>
     <declare-styleable name="DesignTheme"><attr format="reference" name="bottomSheetDialogTheme"/><attr format="reference" name="bottomSheetStyle"/><attr format="color" name="textColorError"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
+    <declare-styleable name="FlexboxLayout"><attr name="flexDirection"><enum name="row" value="0"/><enum name="row_reverse" value="1"/><enum name="column" value="2"/><enum name="column_reverse" value="3"/></attr><attr name="flexWrap"><enum name="nowrap" value="0"/><enum name="wrap" value="1"/><enum name="wrap_reverse" value="2"/></attr><attr name="justifyContent"><enum name="flex_start" value="0"/><enum name="flex_end" value="1"/><enum name="center" value="2"/><enum name="space_between" value="3"/><enum name="space_around" value="4"/></attr><attr name="alignItems"><enum name="flex_start" value="0"/><enum name="flex_end" value="1"/><enum name="center" value="2"/><enum name="baseline" value="3"/><enum name="stretch" value="4"/></attr><attr name="alignContent"><enum name="flex_start" value="0"/><enum name="flex_end" value="1"/><enum name="center" value="2"/><enum name="space_between" value="3"/><enum name="space_around" value="4"/><enum name="stretch" value="5"/></attr><attr format="reference" name="dividerDrawable"/><attr format="reference" name="dividerDrawableHorizontal"/><attr format="reference" name="dividerDrawableVertical"/><attr name="showDivider"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr name="showDividerHorizontal"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr name="showDividerVertical"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr></declare-styleable>
+    <declare-styleable name="FlexboxLayout_Layout"><attr format="integer" name="layout_order"/><attr format="float" name="layout_flexGrow"/><attr format="float" name="layout_flexShrink"/><attr format="fraction" name="layout_flexBasisPercent"/><attr name="layout_alignSelf"><enum name="auto" value="-1"/><enum name="flex_start" value="0"/><enum name="flex_end" value="1"/><enum name="center" value="2"/><enum name="baseline" value="3"/><enum name="stretch" value="4"/></attr><attr format="dimension" name="layout_minWidth"/><attr format="dimension" name="layout_minHeight"/><attr format="dimension" name="layout_maxWidth"/><attr format="dimension" name="layout_maxHeight"/><attr format="boolean" name="layout_wrapBefore"/></declare-styleable>
     <declare-styleable name="FloatingActionButton"><attr name="backgroundTint"/><attr name="backgroundTintMode"/><attr format="color" name="rippleColor"/><attr name="fabSize">
             
             <enum name="auto" value="-1"/>
@@ -483,6 +488,7 @@
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -586,15 +592,29 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="action_settings">Settings</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
     <string name="app_name">NavigationBar</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
     <string name="search_menu_title">Search</string>
+    <string name="section_format">Hello World from section: %1$d</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_post_read">PostRead</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
@@ -610,7 +630,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:overScrollMode">never</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="listLayout">@layout/abc_select_dialog_material</item>
@@ -1874,6 +1897,15 @@
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
     </style>
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Title" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Title">
+    </style>
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/colorBackgroundGrey</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorBackgroundGrey</item>
+        <item name="colorControlNormal">@color/colorBackgroundGrey</item>
+        <item name="colorControlActivated">@color/colorBackgroundGrey</item>
     </style>
     <style name="Theme.AppCompat" parent="Base.Theme.AppCompat"/>
     <style name="Theme.AppCompat.CompactMenu" parent="Base.Theme.AppCompat.CompactMenu"/>

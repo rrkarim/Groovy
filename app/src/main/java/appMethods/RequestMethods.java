@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import Classes.User;
+
 /**
  * Created by YoAtom on 11/11/2016.
  */
@@ -54,5 +56,23 @@ public class RequestMethods {
             }
         }
         return null;
+    }
+    static public User jsonToUser(String result) {
+        JSONObject resultObject = null;
+        User returnUser = new User();
+        int returnedResult = 0;
+        try {
+            resultObject = new JSONObject(result);
+            returnUser.setId(resultObject.getInt("id"));
+            returnUser.setName(resultObject.getString("name"));
+            returnUser.setSurname(resultObject.getString("surname"));
+            returnUser.setImage(resultObject.getString("image"));
+            returnUser.setImage_small(resultObject.getString("image_small"));
+            returnUser.setDate(resultObject.getString("date"));
+            returnUser.setFol_cont(resultObject.getInt("fol_count"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return returnUser;
     }
 }

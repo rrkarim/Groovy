@@ -6,4 +6,5 @@
     <color name="colorBlackTrans">#E6000000</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorBackgroundGrey">#f5f5f5</color>
+    <color name="sample">#f5f5f5</color>
 </resources>

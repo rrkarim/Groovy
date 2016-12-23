@@ -14,7 +14,7 @@ import com.paranoidandroid.navigationbar.R;
 public class ViewHolder {
     public int position;
     public TextView rowTitle, userName, rowAuthor, rowRate, postDate, repostCount;
-    public ImageButton imView;
+    public ImageButton imView, buttonRep;
     public CircularImageView profileImage;
     public ImageView button;
 

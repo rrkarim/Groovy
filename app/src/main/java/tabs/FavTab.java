@@ -16,7 +16,7 @@ import com.paranoidandroid.navigationbar.R;
 public class FavTab extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tab, container, false);
+        View v = inflater.inflate(R.layout.fragment_profile, container, false);
         return v;
     }
 }

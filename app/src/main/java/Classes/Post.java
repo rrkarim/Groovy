@@ -58,16 +58,28 @@ public class Post {
         return text;
     }
 
-    public void increaseCount() {
-        this.likesCount++;
-    }
-
     public int getRepCounts() {
         return repCounts;
     }
 
+    public void increaseCount() {
+        this.likesCount++;
+        this.actions.setLike();
+    }
+
     public void increaseCount(int likes) {
         this.likesCount += likes;
+        this.actions.setLike();
+    }
+
+    public void increaseCountRep() {
+        this.repCounts++;
+        this.actions.setPost();
+    }
+
+    public void increaseCountRep(int reps) {
+        this.repCounts += reps;
+        this.actions.setPost();
     }
 
     public String getAuthorName() {

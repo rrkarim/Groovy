@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/headerLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="2dp"
+    android:padding="2dp">
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/search_box"/>
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexLayout"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:alignContent="flex_start"
+        app:alignItems="flex_start"
+        app:flexWrap="wrap"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:orientation="horizontal"
+        >
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</LinearLayout>

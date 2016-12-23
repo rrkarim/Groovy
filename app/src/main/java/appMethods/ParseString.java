@@ -22,6 +22,7 @@ import appClasses.AppInfo;
 
 public class ParseString {
     public static ArrayList<Post> StringToArrayPost(String str, int requestLen) throws JSONException, ParseException {
+
         ArrayList<Post> listS = new ArrayList<>();
 
         JSONObject jsonObject = new JSONObject(str);
@@ -63,6 +64,48 @@ public class ParseString {
                     ));
         }
         return listS;
+    }
+
+    public static void StringToArrayPostAdd(String str, int requestLen, ArrayList<Post> listS) throws JSONException, ParseException {
+        JSONObject jsonObject = new JSONObject(str);
+
+        for(int i = 0; i < requestLen; ++i) {
+
+            JSONObject object = jsonObject.getJSONObject(String.valueOf(i));
+            if(object == null) break;
+
+            JSONObject objectAuthor = object.getJSONObject("user");
+            JSONObject objectAction = object.getJSONObject("actions");
+
+
+            String dateOfAuthor = object.getString("date");
+            DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+            Date dateAuthor = format.parse(dateOfAuthor);
+
+            Author author = new Author(objectAuthor.getInt("id"), objectAuthor.getString("name"), objectAuthor.getString("surname"), objectAuthor.getString("image_small"), dateAuthor);
+            Actions actions = new Actions(objectAction.getInt("like"), objectAction.getInt("post"));
+
+            String dateOfAPost = object.getString("date");
+            Date datePost = format.parse(dateOfAPost);
+
+            listS.add(new Post(
+                    object.getInt("id"),
+                    object.getString("title"),
+                    object.getString("singer"),
+                    object.getString("header_image"),
+                    object.getInt("likes_count"),
+                    object.getInt("rep_counts"),
+                    object.getInt("author_id"),
+                    object.getString("album"),
+                    object.getInt("type_id"),
+                    object.getString("track"),
+                    object.getString("text"),
+                    author,
+                    datePost,
+                    actions
+            ));
+        }
+        return;
     }
 
     public static ArrayList<Integer> StringToArrayLike(String str, int requestLen) throws JSONException {

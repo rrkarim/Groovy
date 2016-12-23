@@ -33,5 +33,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:5.1.2'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    compile 'com.google.android:flexbox:0.2.3'
     testCompile 'junit:junit:4.12'
 }

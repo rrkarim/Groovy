@@ -5,59 +5,39 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.1"
-    timestamp="97062182649609"
+    timestamp="110026024712229"
     token="6504575141237380455"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="455" />
+        duration="616" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="33" />
+        duration="26" />
     <task
         name="verifier"
         duration="1" />
 
     <artifact
-        location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
         type="DEX" />
 
     <build
-        timestamp="93582587298754"
+        timestamp="109964073469576"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="93849214380771"
-        verifier="R_CLASS_CHANGE" >
-        <artifact
-            location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="94867956782535"
+        timestamp="110026024712229"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="97062182649609"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
             type="DEX" />
     </build>
 

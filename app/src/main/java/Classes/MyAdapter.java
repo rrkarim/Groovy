@@ -61,10 +61,13 @@ import static appMethods.RequestMethods.returnParsedJsonObject;
 public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
 
     private PlayerCallback callback;
-    //HashMap<Integer, Integer> queryLikes = new HashMap<>();
+    private ArrayList<Post> list;
+    private User globalUser;
 
-    public MyAdapter(Context context, ArrayList<Post> urls) {
+    public MyAdapter(Context context, ArrayList<Post> urls, User globalUser) {
         super(context, 0, urls);
+        list = urls;
+        this.globalUser = globalUser;
     }
 
     @Override
@@ -74,7 +77,6 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
         ViewHolder viewHolder;
 
         if(convertView == null) {
-
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.row, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.position = position;
@@ -87,18 +89,14 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
             viewHolder.postDate = (TextView) convertView.findViewById(R.id.postDate);
             viewHolder.button = (ImageView) convertView.findViewById(R.id.favB);
             viewHolder.repostCount = (TextView) convertView.findViewById(R.id.repostCount);
+            viewHolder.buttonRep = (ImageButton) convertView.findViewById(R.id.repostB);
 
             convertView.setTag(viewHolder);
         }
 
         viewHolder = (ViewHolder) convertView.getTag();
         final ViewHolder viewHolderFinal = viewHolder;
-        /*
-        if(queryLikes.get(position) != null) {
-            postTmp.increaseCount(queryLikes.get(position));
-            queryLikes.remove(position);
-        }
-        */
+
 
         if(postTmp.isLiked() == true) {
             viewHolder.button.setEnabled(false);
@@ -109,6 +107,17 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
             viewHolder.button.setEnabled(true);
             viewHolder.button.setImageDrawable( ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_black_24dp));
             viewHolder.rowRate.setTextColor(ContextCompat.getColor(getContext(), R.color.cardview_dark_background));
+        }
+
+        if(postTmp.isPosted() == true) {
+            viewHolder.buttonRep.setEnabled(false);
+            viewHolder.buttonRep.setImageDrawable( ContextCompat.getDrawable(getContext(), R.drawable.ic_insert_link_pink_24dp));
+            viewHolder.repostCount.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
+        }
+        else {
+            viewHolder.buttonRep.setEnabled(true);
+            viewHolder.buttonRep.setImageDrawable( ContextCompat.getDrawable(getContext(), R.drawable.ic_insert_link_black_24dp));
+            viewHolder.repostCount.setTextColor(ContextCompat.getColor(getContext(), R.color.cardview_dark_background));
         }
 
 
@@ -130,14 +139,23 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
             @Override
             public void onClick(View v) {
                 viewHolderFinal.button.setEnabled(false);
-                likeClick(postTmp.getId(), AppInfo.userId, position, viewHolderFinal, postTmp);
+                likeClick(postTmp.getId(), globalUser.getId(), viewHolderFinal, postTmp);
+            }
+        });
+
+        viewHolderFinal.buttonRep.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                viewHolderFinal.buttonRep.setEnabled(false);
+                postClick(postTmp.getId(), globalUser.getId(), viewHolderFinal, postTmp);
             }
         });
 
         viewHolder.imView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callback.playPressed(postTmp, position);
+                callback.playPressed(postTmp, position, list);
             }
         });
 
@@ -149,9 +167,7 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
 
     }
 
-    private void likeClick(int id, int uid, int position, ViewHolder holder, Post postTmp) {
-
-
+    private void likeClick(int id, int uid, ViewHolder holder, Post postTmp) {
         String uri = AppInfo.serverUri + "/" + AppInfo.serverRequestLike;
         String parameters = "id=" + id + "  &uid=" + uid;
 
@@ -162,6 +178,20 @@ public class MyAdapter extends ArrayAdapter<Post> implements AsyncResponse {
         holder.rowRate.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
 
         AsyncRequest asyncRequestObject = new AsyncRequest(this, -1, AsyncCode._SET_LIKE);
+        asyncRequestObject.execute(uri, parameters);
+    }
+
+    private void postClick(int id, int uid, ViewHolder holder, Post postTmp) {
+        String uri = AppInfo.serverUri + "/" + AppInfo.serverRequestPost;
+        String parameters = "id=" + id + "  &uid=" + uid;
+
+        holder.buttonRep.setEnabled(false);
+        postTmp.increaseCountRep();
+        holder.buttonRep.setImageDrawable( ContextCompat.getDrawable(getContext(), R.drawable.ic_insert_link_pink_24dp));
+        holder.repostCount.setText(String.valueOf(postTmp.getRepCounts()));
+        holder.repostCount.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
+
+        AsyncRequest asyncRequestObject = new AsyncRequest(this, -1, AsyncCode._SET_POST);
         asyncRequestObject.execute(uri, parameters);
     }
 

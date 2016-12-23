@@ -7,6 +7,7 @@ package appClasses;
 public class Errors {
     public static String _LIKE_ERROR = "Can't increase like count";
     public static String _NEWS_GET_ERROR = "Error getting news";
+    public static String _NEWS_SEARCH_ERROR = "Error searching news";
     public static String _LIKES_GET_ERROR = "Error getting likes";
     public static String _LASTFM_GET_ERROR = "Error getting artist image";
 }

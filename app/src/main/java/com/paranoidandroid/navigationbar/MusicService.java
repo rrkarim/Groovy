@@ -94,8 +94,6 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
 
     @Override
     public boolean onUnbind(Intent intent){
-        player.stop();
-        player.release();
         return false;
     }
 
@@ -108,8 +106,10 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     @Override
     public void onCompletion(MediaPlayer mp) {
         if(player.getCurrentPosition() > 0) {
-            callback.trackCompleteCallback(songs.get(songPosn));
-            playNext();
+            if(songs != null) {
+                callback.trackCompleteCallback(songs.get(songPosn));
+                playNext();
+            }
         }
     }
 
@@ -121,6 +121,8 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
 
     @Override
     public void onDestroy() {
+        player.stop();
+        player.release();
         stopForeground(true);
     }
 
@@ -160,7 +162,11 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
 
     public void playNext(){
         songPosn++;
-        if(songPosn == songs.size()) songPosn = 0;
+        if(songPosn >= songs.size()) songPosn = 0;
         playSong();
+    }
+
+    public void stopPlayer() {
+        player.stop();
     }
 }

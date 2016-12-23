@@ -1,24 +1,28 @@
 package com.paranoidandroid.navigationbar;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.drawable.Drawable;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.os.Bundle;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.MotionEvent;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,55 +34,48 @@ import android.widget.TextView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONException;
-
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 
-import Classes.MusicController;
-import Classes.MyAdapter;
 import Classes.PlaylistAdapter;
 import Classes.Post;
-import Interfaces.AsyncResponse;
+import Classes.User;
 import Interfaces.MediaCallback;
 import Interfaces.PlayerCallback;
+import Interfaces.UserCallback;
 import appClasses.AppInfo;
-import appClasses.AsyncCode;
-import appClasses.Errors;
-import appMethods.AsyncRequest;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import tabs.HomeTab;
+import tabs.ProfileTab;
+import tabs.SearchTab;
 
-import static appMethods.ParseString.StringToArrayPost;
-import static appMethods.RequestMethods.returnParsedJsonObject;
+public class MainActivity extends AppCompatActivity implements MediaController.MediaPlayerControl, MediaCallback,
+        PlayerCallback, SeekBar.OnSeekBarChangeListener, UserCallback {
 
-public class MainActivity extends AppCompatActivity implements AsyncResponse, PlayerCallback, MediaController.MediaPlayerControl, MediaCallback, SeekBar.OnSeekBarChangeListener {
+    /**
+     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * fragments for each of the sections. We use a
+     * {@link FragmentPagerAdapter} derivative, which will keep every
+     * loaded fragment in memory. If this becomes too memory intensive, it
+     * may be best to switch to a
+     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
+    private SectionsPagerAdapter mSectionsPagerAdapter;
 
-
-    @InjectView(R.id.toolbar)
-    Toolbar toolbar;
-
-    @InjectView(R.id.playPauseButton)
-    ImageButton button;
-    @InjectView(R.id.trackSeek)
-    SeekBar seekBar;
-    @InjectView(R.id.trackCurrentTime)
-    TextView trackCurrentTime;
-    @InjectView(R.id.trackFullTime)
-    TextView trackFullTime;
-    @InjectView(R.id.song_list)
-    ListView songList;
-
-
-    private ListView listView;
-    private MyAdapter myAdapter;
-    private PlaylistAdapter playlistAdapter;
-    private String uri;
-    private AsyncRequest asyncRequestObject;
-    private SwipeRefreshLayout layout;
-    private SlidingUpPanelLayout slidingLayout;
+    /**
+     * The {@link ViewPager} that will host the section contents.
+     */
+    private ViewPager mViewPager;
+    private TabLayout tabLayout;
     private LinearLayout dragView;
+    private SlidingUpPanelLayout slidingLayout;
+    private PlaylistAdapter playlistAdapter;
+
+    @InjectView(R.id.playPauseButton) ImageButton button;
+    @InjectView(R.id.trackSeek) SeekBar seekBar;
+    @InjectView(R.id.trackCurrentTime) TextView trackCurrentTime;
+    @InjectView(R.id.trackFullTime) TextView trackFullTime;
+    @InjectView(R.id.song_list) ListView songList;
 
     private ArrayList<Post> listS;
 
@@ -87,8 +84,12 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
     private MusicService musicSrv;
     private Intent playIntent;
     private boolean musicBound = false;
-
     private final Handler handler = new Handler();
+    private ArrayList<Post> globalList;
+
+    //user
+    private User userGlobal;
+    private SharedPreferences preferences;
 
     private ServiceConnection musicConnection = new ServiceConnection() {
 
@@ -119,41 +120,39 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
-        Intent intent = new Intent(this, Main2Activity.class);
-        startActivity(intent);
+        getUserGlobal();
+
+        //
 
         ButterKnife.inject(this);
-        setupToolbar();
+
+        // Create the adapter that will return a fragment for each of the three
+        // primary sections of the activity.
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
 
         seekBar.setOnSeekBarChangeListener(this);
 
-        ImageView sm = (ImageView) findViewById(R.id.coverImage);
-        Drawable placeholder = sm.getContext().getResources().getDrawable(R.drawable.placeholder);
-        sm.setImageDrawable(placeholder);
-
-        layout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
-        listView = (ListView) findViewById(R.id.listview);
         slidingLayout = (SlidingUpPanelLayout)findViewById(R.id.sliding_layout);
         slidingLayout.setDragView(findViewById(R.id.dragRegion));
         slidingLayout.setEnableDragViewTouchEvents(true);
+
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
         dragView = (LinearLayout) findViewById(R.id.dragView);
         dragView.setVisibility(View.INVISIBLE);
-        layout.setRefreshing(true);
 
-        uri = AppInfo.serverUri + "/" + AppInfo.serverRequestGetPost;
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
 
-        layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                asyncRequestObject = new AsyncRequest(MainActivity.this, -1, AsyncCode._GET_NEWS);
-                asyncRequestObject.execute(uri, "");
-            }
-        });
 
         songList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -163,73 +162,45 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
             }
         });
 
-        asyncRequestObject = new AsyncRequest(this, -1, AsyncCode._GET_NEWS);
-        asyncRequestObject.execute(uri, "");
+        setupTabIcons();
+
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
     }
 
+    private void getUserGlobal() {
+        preferences = getSharedPreferences(AppInfo.sharedPrefernce, 0);
+        String uimage = preferences.getString("uimage", null);
+        String uname = preferences.getString("uname", null);
+        String usname = preferences.getString("usname", null);
+        int uid = preferences.getInt("uid", -1);
+        int ufol = preferences.getInt("ufol", 0);
 
-    void parseData(String str, int queryLen) {
-        listS = new ArrayList<>();
-        try {
-            listS = StringToArrayPost(str, queryLen);
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-        catch(ParseException e) {
-            e.printStackTrace();
-        }
-
-        myAdapter = new MyAdapter(this, listS);
-        myAdapter.setCallback(this);
-        playlistAdapter = new PlaylistAdapter(this, listS);
-
-        if(musicSrv != null) musicSrv.setList(listS); // fixes here
-
-
-
-        listView.setAdapter(myAdapter);
-        songList.setAdapter(playlistAdapter);
+        userGlobal = new User(uid, uname, usname, uimage, ufol);
     }
+
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_white_24dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_search_white_24dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_dehaze_white_24dp);
+    }
+
 
     @Override
-    public void processFinish(String output, int position, int requestCode) {
-        if(requestCode == AsyncCode._GET_NEWS) {
-            if (output == null || output.equals("")) {
-                System.out.println(Errors._NEWS_GET_ERROR);
-            }
-            else {
-                int jsonResult = returnParsedJsonObject(output);
-                if(jsonResult > 0) {
-                    parseData(output, jsonResult);
-                }
-            }
-            layout.setRefreshing(false);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
-        else if(requestCode == AsyncCode._GET_LASTFM) {
 
-        }
-    }
-
-    private void setupToolbar() {
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.addTab(tabLayout.newTab());
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_black_24dp);
-
-        tabLayout.addTab(tabLayout.newTab());
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_search_black_24dp);
-
-        tabLayout.addTab(tabLayout.newTab());
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_favorite_black_24dp);
-
-        tabLayout.addTab(tabLayout.newTab());
-        tabLayout.getTabAt(3).setIcon(R.drawable.ic_dehaze_black_24dp);
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -275,21 +246,21 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
     @Override
     public int getCurrentPosition() {
         if(musicSrv!=null && musicBound && musicSrv.isPng())
-        return musicSrv.getPosn();
+            return musicSrv.getPosn();
         else return 0;
     }
 
     @Override
     public int getDuration() {
         if(musicSrv!=null && musicBound && musicSrv.isPng())
-        return musicSrv.getDur();
+            return musicSrv.getDur();
         else return 0;
     }
 
     @Override
     public boolean isPlaying() {
         if(musicSrv!=null && musicBound)
-        return musicSrv.isPng();
+            return musicSrv.isPng();
         return false;
     }
 
@@ -314,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
 
     @Override
     public int getBufferPercentage() {
-            return 0;
+        return 0;
     }
 
     @Override
@@ -394,7 +365,8 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
     }
 
     @Override
-    public void playPressed(Post post, int position) {
+    public void playPressed(Post post, int position, ArrayList<Post> list) {
+        readyDatasetListAdapter(list);
         listviewClicked(post, position);
     }
 
@@ -449,5 +421,125 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Pl
                 .append(String.format("%02d", seconds));
 
         return buf.toString();
+    }
+
+    public void readyDatasetListAdapter(ArrayList<Post> listS) {
+        if(globalList == null) {
+            globalList = new ArrayList<Post>(listS);
+        }
+        else {
+            globalList.clear();
+            globalList.addAll(listS);
+        }
+        if(musicSrv != null) musicSrv.setList(listS); // fixes here
+        if(playlistAdapter == null) {
+            playlistAdapter = new PlaylistAdapter(this, globalList);
+            songList.setAdapter(playlistAdapter);
+        }
+        else {
+            playlistAdapter.notifyDataSetChanged();
+        }
+
+
+    }
+
+    @Override
+    public User getUser() {
+        return userGlobal;
+    }
+
+    @Override
+    public void logoutAction() {
+
+        handler.removeCallbacks(updatePositionRunnable);
+
+        SharedPreferences.Editor edit = preferences.edit();
+        edit.clear();
+        edit.commit();
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
+        musicSrv.stopPlayer();
+
+        //unbindService(musicConnection);
+        //finish();
+
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public PlaceholderFragment() {
+        }
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_main2, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            return rootView;
+        }
+    }
+
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            if(position == 0) {
+                HomeTab homeProfile = new HomeTab();
+                homeProfile.setCallback(MainActivity.this);
+                return homeProfile;
+            }
+            else if(position == 1) {
+                SearchTab searchProfile = new SearchTab();
+                searchProfile.setCallback(MainActivity.this);
+                return searchProfile;
+            }
+            else {
+                ProfileTab tabProfile = new ProfileTab();
+                tabProfile.setCallback(MainActivity.this);
+                return tabProfile;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return null;
+        }
     }
 }

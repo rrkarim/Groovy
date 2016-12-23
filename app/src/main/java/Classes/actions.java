@@ -11,6 +11,14 @@ public class Actions {
         this.isPosted = isPosted;
     }
 
+    public void setLike()  {
+        this.isLiked = 1;
+    }
+
+    public void setPost()  {
+        this.isPosted = 1;
+    }
+
     public int getIsLiked() {
         return isLiked;
     }
