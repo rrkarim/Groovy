@@ -1,4 +1,4 @@
-# Groovy
+# Groovy - Music Player
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/CoderINusE/Groovy#license)
 [![Gitter chat](https://badges.gitter.im/punker76/simple-music-player.png)](https://gitter.im/GroovyApp/)  
 
