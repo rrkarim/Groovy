@@ -4,11 +4,21 @@
 
 ![preview](https://cloud.githubusercontent.com/assets/11855380/21582504/a175e34c-d00f-11e6-9548-3d07a071e75a.gif)
 
+# Development Setup
+* Download and install Android Studio and SDK tools
+* Install XAMPP (free distribution containing MariaDB and PHP)
+* Import project from version control.
+* Copy Groovy/backed files to htdocs in your xampp directory (where you installed it)
+* Go to MYSQL administration page (http://localhost/phpmyadmin/) and create new database.
+* Run db.sql (Groovy/sql/db.sql) file content in your new created database.
+* Change config.php file (htdocs/include/config.php). Set your configuration.
+* Run the application. (root_username: root, root_password: root)
+
 # License
 
 MIT License
 
-Copyright (c) [2017] [Rasul Kerimov]
+Copyright (c) Rasul Kerimov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
