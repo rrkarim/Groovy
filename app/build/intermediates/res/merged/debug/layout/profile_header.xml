@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scaleType="centerCrop">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/background_login"
+        android:scaleType="centerCrop">
+
+        <ImageButton
+            android:id="@+id/log_out"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/ic_close_black_24dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/profileImage2"
+                android:layout_width="106dp"
+                android:layout_height="106dp"
+                app:siArrowPosition="right"
+                android:layout_marginTop="15dp"
+                app:siSquare="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:background="@color/colorBlackTrans"
+                android:padding="4dp"
+                android:layout_gravity="center"
+                android:textColor="@color/colorWhite"
+                android:text="Rasul Kerimov"
+                android:layout_below="@+id/profileImage2"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/profileFoll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:background="@color/colorBlackTrans"
+                android:padding="2dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@id/profileName"
+                android:text="2 followers"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

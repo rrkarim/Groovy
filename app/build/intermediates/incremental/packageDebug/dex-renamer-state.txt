@@ -1,4 +1,4 @@
-#Fri Dec 23 09:39:08 PST 2016
+#Sun Jan 01 20:29:34 PST 2017
 base.0=C\:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_aa28d96dfb2560ef685946a74da47cb8b6fc261f
 renamed.1=classes.dex
 renamed.0=classes2.dex

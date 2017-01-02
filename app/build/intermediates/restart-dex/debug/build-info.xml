@@ -4,41 +4,34 @@
     api-level="24"
     density="xxhdpi"
     format="8"
-    plugin-version="2.2.1"
-    timestamp="110026024712229"
+    plugin-version="2.2.3"
+    timestamp="84026350872661"
     token="6504575141237380455"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="616" />
+        duration="10645" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="26" />
+        duration="4797" />
     <task
         name="verifier"
-        duration="1" />
+        duration="3154" />
 
     <artifact
-        location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-        type="DEX" />
+        location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="109964073469576"
+        timestamp="84026350872661"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="110026024712229"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\YoAtom\Desktop\NavigationBar\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

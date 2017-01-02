@@ -24,12 +24,12 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_vector_test.xml"
     },
     {
-        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bookmark_black_24dp.xml",
-        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_bookmark_black_24dp.xml"
-    },
-    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bookmark_black_24dp.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_bookmark_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
@@ -52,12 +52,12 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_switch_thumb_material.xml"
-    },
-    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_dehaze_black_24dp.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_dehaze_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\below_shadow.xml",
@@ -180,12 +180,12 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\drawable\\ic_insert_link_white_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
-        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_ab_back_material.xml"
-    },
-    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",

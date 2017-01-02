@@ -20,12 +20,12 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
@@ -48,12 +48,12 @@
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row.xml",
-        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\layout\\row.xml"
-    },
-    {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
         "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\row.xml",
+        "source": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\src\\main\\res\\layout\\row.xml"
     },
     {
         "merged": "C:\\Users\\YoAtom\\Desktop\\NavigationBar\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
