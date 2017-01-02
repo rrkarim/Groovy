@@ -1,8 +1,10 @@
 # Groovy - Music Player
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/CoderINusE/Groovy#license)
-[![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)  
-[![gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/GroovyApp/)  
+[![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
+[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
+[![gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/GroovyApp)
 [![PRs Welcome](https://img.shields.io/badge/prs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 
 ![preview](https://cloud.githubusercontent.com/assets/11855380/21582504/a175e34c-d00f-11e6-9548-3d07a071e75a.gif)
 
