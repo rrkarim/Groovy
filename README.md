@@ -8,7 +8,7 @@
 
 ![preview](https://cloud.githubusercontent.com/assets/11855380/21582504/a175e34c-d00f-11e6-9548-3d07a071e75a.gif)
 
-If you have any questions/remarks, ping me on twitter [![coderinuse](https://twitter.com/CoderInusE)](coderinuse)
+If you have any questions/remarks, ping me on twitter [coderinuse](https://twitter.com/CoderInusE)
 
 # Development Setup
 * Download and install Android Studio and SDK tools
