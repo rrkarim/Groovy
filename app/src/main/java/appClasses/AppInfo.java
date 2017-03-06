@@ -6,7 +6,7 @@ package appClasses;
 
 public class AppInfo {
     public static String serverUri = "http://10.0.2.2";
-    public static String serverImageri = "http://10.0.2.2/images/";
+    public static String serverImageUri = "http://10.0.2.2/images/";
     public static String serverRequestGetPost = "getPosts.php";
     public static String serverRequestGetCountries = "getCountries.php";
     public static String serverRequestLike = "like.php";
